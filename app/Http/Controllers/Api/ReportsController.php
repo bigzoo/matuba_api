@@ -11,8 +11,6 @@ class ReportsController extends ApiBaseController
         'description' => ['string'],
         'car_plates' => ['string'],
         'road_name' => ['string'],
-        'posted_at' => ['date'],
-        'occurred_at' => ['date'],
         'latitude' => ['string'],
         'longitude' => ['string'],
         'user_id' => ['numeric', 'exists:users,id']
@@ -21,8 +19,6 @@ class ReportsController extends ApiBaseController
     protected $createRules = [
         'description' => ['required'],
         'user_id' => ['required'],
-        'occurred_at' => ['date'],
-        'posted_at' => ['date']
     ];
 
     public function __construct(Report $report)
