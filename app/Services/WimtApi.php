@@ -13,10 +13,10 @@ class WimtApi
 
     public function __construct()
     {
-        $token = Setting::getValue('wimt_token');
 //        if (!$token || Carbon::parse(Setting::getValue('wimt_token_expiry'))->diffInMinutes(Carbon::now()) < 10) {
         $this->setToken();
 //        }
+        $token = Setting::getValue('wimt_token');
         $this->client = new GuzzleClient(['headers' =>
             [
                 'Authorization' => 'Bearer ' . $token,
